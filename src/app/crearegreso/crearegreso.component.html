@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Agregar Egreso</h2>
+
+  <form (submit)="agregarEgreso()">
+    <div class="form-group">
+      <label for="nombre">Nombre del Egreso</label>
+      <input type="text" id="nombre" class="form-control" [(ngModel)]="nuevoEgreso.nombre" required>
+    </div>
+
+    <div class="form-group">
+      <label for="Categoria">Categoría</label>
+      <input type="text" id="categoria" class="form-control" [(ngModel)]="nuevoEgreso.categoria" required>
+    </div>
+
+    <div class="form-group">
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" class="form-control" [(ngModel)]="nuevoEgreso.fecha" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agregar Egreso</button>
+  </form>
+</div>

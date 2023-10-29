@@ -1,0 +1,11 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+body {
+    background-image: url('fondo1.PNG');
+    background-repeat: no-repeat; // Evita la repetición de la imagen de fondo
+    background-size: cover; // Ajusta la imagen al tamaño del contenedor
+    background-position: center; // Centra la imagen horizontalmente y verticalmente
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+
+}

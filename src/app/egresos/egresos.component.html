@@ -1,0 +1,28 @@
+<h1 class="text-center"><b>Egresos</b></h1>
+<br>
+
+<div class="container d-flex justify-content-center align-items-center vh-70">
+    <button class="btn btn-primary">
+      <a routerLink='/crearEgreso/' routerLinkActive="active-link">
+        <h2 class="card-title">Agregar</h2> </a>
+
+    </button>
+  </div>
+  <table>
+    <tr>
+      <th>Nº</th>
+      <th>Nombre Egreso</th>
+      <th>Monto</th>
+      <th>Fecha</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let egreso of listaDeEgresos; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ egreso.nombre }}</td>
+      <td>{{ egreso.monto }}</td>
+      <td>{{ egreso.fecha }}</td>
+      <td>Acciones</td>
+    </tr>
+  </table>
+  
+<router-outlet></router-outlet>

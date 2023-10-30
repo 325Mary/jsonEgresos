@@ -11,6 +11,7 @@ export class CrearegresoComponent {
   nuevoEgreso: any = {
     id: 0, 
     nombre: '',
+    monto: 0,
     categoria: '',
     fecha: ''
   };
@@ -18,17 +19,16 @@ export class CrearegresoComponent {
   constructor(private egresoService: EgresoService, private router: Router) { }
 
   agregarEgreso() {
-    // No sobrescribas el objeto nuevoEgreso, simplemente asigna los valores
-    this.nuevoEgreso.nombre = this.nuevoEgreso.nombre;
-    this.nuevoEgreso.categoria = this.nuevoEgreso.categoria;
-    this.nuevoEgreso.fecha = this.nuevoEgreso.fecha;
-  
     // Guardar el egreso utilizando el servicio EgresoService
     this.egresoService.crearEgreso(this.nuevoEgreso);
+
+    
   
     // Redirigir al usuario a la lista de egresos
     this.router.navigate(['/egresos']);
+    
   }
+  
   
   
   }

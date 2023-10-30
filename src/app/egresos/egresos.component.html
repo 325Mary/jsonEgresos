@@ -1,28 +1,56 @@
-<h1 class="text-center"><b>Egresos</b></h1>
-<br>
-
-<div class="container d-flex justify-content-center align-items-center vh-70">
-    <button class="btn btn-primary">
-      <a routerLink='/crearEgreso/' routerLinkActive="active-link">
-        <h2 class="card-title">Agregar</h2> </a>
-
-    </button>
+<ng-template #noEgresos>
+  <div class="text-center">
+    <h2><b>No se han creado egresos.</b></h2>
+    
   </div>
-  <table>
-    <tr>
-      <th>Nº</th>
-      <th>Nombre Egreso</th>
-      <th>Monto</th>
-      <th>Fecha</th>
-      <th>Acciones</th>
-    </tr>
-    <tr *ngFor="let egreso of listaDeEgresos; let i = index">
-      <td>{{ i + 1 }}</td>
-      <td>{{ egreso.nombre }}</td>
-      <td>{{ egreso.monto }}</td>
-      <td>{{ egreso.fecha }}</td>
-      <td>Acciones</td>
-    </tr>
-  </table>
+</ng-template>
+
+
+
+<div class="container">
+    <h1 class="text-center"><b>Egresos</b></h1>
+    <br>
+    
+  <br>    
+    <div class="d-flex justify-content-center align-items-center">
+      <button class="btn btn-primary">
+        <a routerLink="/crearEgreso/" routerLinkActive="active-link">
+          <h2 class="card-title">Agregar</h2>
+        </a>
+      </button>
+    </div>
   
-<router-outlet></router-outlet>
+    <div class="d-flex flex-fill">
+      <ng-container *ngIf="listaDeEgresos.length > 0; else noEgresos">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nº</th>
+              <th>Nombre Egreso</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let egreso of listaDeEgresos; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ egreso.nombre }}</td>
+              <td>{{ egreso.fecha }}</td>
+              <td>
+                
+                <button [routerLink]="['/verDetalles', egreso.id]">Ver</button>
+                <button [routerLink]="['/editarEgreso/', egreso.id]">Editar</button>
+                <button (click)="eliminarEgreso(egreso)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+      
+      
+      
+    </div>
+  
+    <router-outlet></router-outlet>
+  </div>
+  

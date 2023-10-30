@@ -1,1 +1,43 @@
-<p>editar-egreso works!</p>
+<div class="container">
+  <div class="row justify-content-center align-items-center" style="height: 100vh;">
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h2 class="text-center">Formulario de Egreso</h2>
+
+        <div class="form-group">
+          <label for="nombre">Nombre del Egreso</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="egreso.nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="monto">Monto</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input type="number" id="monto" name="monto" class="form-control" [(ngModel)]="egreso.monto" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="categoria">Categoría</label>
+          <select id="categoria" name="categoria" class="form-control" [(ngModel)]="egreso.categoria" required>
+            <option value="Cafeteria">Cafetería</option>
+            <option value="Papeleria">Papelería</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fecha">Fecha</label>
+          <input type="date" id="fecha" name="fecha" class="form-control" [(ngModel)]="egreso.fecha" required>
+        </div>
+
+        <div class="text-center">
+          <button [routerLink]="['/egresos/']" type="submit" class="btn btn-primary" (click)="guardarCambios()">Guardar Cambios</button>
+          <button [routerLink]="['/egresos/']" class="btn btn-secondary">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

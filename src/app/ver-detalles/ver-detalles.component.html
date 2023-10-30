@@ -1,1 +1,17 @@
-<p>ver-detalles works!</p>
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="height: 100vh;">
+      <div *ngIf="egreso" class="col-md-1">
+        <h1>Datos del Egreso </h1>
+        <p>Nombre: {{egreso.nombre}}</p>
+        <p>Monto: {{ egreso.monto }}</p>
+        <p>Categoría: {{ egreso.categoria }}</p>
+        <p>Fecha: {{ egreso.fecha }}</p>
+        <button [routerLink]="['/egresos']" class="btn btn-primary">Volver</button>
+      </div>
+  
+      <div *ngIf="!egreso" class="col-md-6">
+        <p>El egreso no se encontró o no existe.</p>
+      </div>
+    </div>
+  </div>
+  

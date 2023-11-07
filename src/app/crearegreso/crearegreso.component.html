@@ -5,7 +5,7 @@
         <h2 class="text-center mb-4">Formulario de Egreso</h2>
         <div class="form-group">
           <label for="nombre">Nombre del Egreso</label>
-          <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="nuevoEgreso.nombre" required>
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre del gasto" class="form-control" [(ngModel)]="nuevoEgreso.nombre" required>
         </div>
 
         <div class="form-group">
@@ -14,27 +14,26 @@
             <div class="input-group-prepend">
               <span class="input-group-text">$</span>
             </div>
-            <input type="number" id="monto" name="monto" class="form-control" [(ngModel)]="nuevoEgreso.monto" required>
+            <input type="number" id="monto" name="monto" placeholder="monto del gasto" class="form-control" [(ngModel)]="nuevoEgreso.monto" required>
           </div>
         </div>
 
         <div class="form-group">
           <label for="categoria">Categoría</label>
-          <select id="categoria" name="categoria" class="form-control" [(ngModel)]="nuevoEgreso.categoria" required>
+          <select id="categoria" name="categoria"  class="form-control" [(ngModel)]="nuevoEgreso.categoria" required>
             <option value="Cafeteria">Cafeteria</option>
             <option value="Papeleria">Papeleria</option>
             <option value="Otros">Otros</option>
-            <!-- Agrega más opciones de categoría según sea necesario -->
           </select>
         </div>
 
         <div class="form-group">
           <label for="fecha">Fecha</label>
-          <input type="date" id="fecha" name="fecha" class="form-control" [(ngModel)]="nuevoEgreso.fecha" required>
+          <input type="date" id="fecha" name="fecha" placeholder="fecha del gasto" class="form-control" [(ngModel)]="nuevoEgreso.fecha" required>
         </div>
 
         <div class="text-center">
-          <button type="submit" class="btn btn-primary" [disabled]="!formularioEgreso.valid">Agregar Egreso</button>
+          <button type="submit" class="btn btn-primary" (click)="agregarEgreso()" [disabled]="!formularioEgreso.valid">Agregar Egreso</button>
         </div>
       </form>
     </div>

@@ -1,0 +1,10 @@
+{
+    "nombre": "Producto1",
+    "monto": 0,
+    "categoria": [
+        "Papeleria ",
+        "Cafeteria",
+        "otros "
+      ],
+    "fecha": "20-11-2023"
+}

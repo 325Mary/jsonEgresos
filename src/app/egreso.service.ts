@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EgresoService {
+  private apiURL = 'http://localhost:3000'; // La URL de tu servidor
   egresos: any[] = [];
 
-  constructor() {
-    // Inicializa la lista de egresos vacía
+  constructor(private http: HttpClient) {    // Inicializa la lista de egresos vacía
     this.egresos = [];
   }
 

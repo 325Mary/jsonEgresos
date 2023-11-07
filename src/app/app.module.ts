@@ -14,6 +14,8 @@ import { CrearegresoComponent } from './crearegreso/crearegreso.component';
 import { EditarEgresoComponent } from './editar-egreso/editar-egreso.component';
 import { VerDetallesComponent } from './ver-detalles/ver-detalles.component';
 import { HttpClientModule } from '@angular/common/http';
+import {JsonDatosService  } from "./json-datos.service";
+import { EgresoService } from "./egreso.service";
 
 @NgModule({
   declarations: [
@@ -32,9 +34,10 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
-  providers: [],
+  providers: [JsonDatosService, EgresoService  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
